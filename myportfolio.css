@@ -1,91 +1,129 @@
-body {font-family:Verdana, Arial, sans-serif;
+body {
+    font-family: Verdana, Arial, sans-serif;
     background: repeating-linear-gradient(
-    135deg,
-    #ead6b4,
-    #e9e1d3 2px,
-    #e4c897 2px,
-    #e4c897 4px
+        135deg,
+        #ead6b4,
+        #e9e1d3 2px,
+        #e4c897 2px,
+        #e4c897 4px
     );
 }
-#wrapper { background-color: #e9cd9e; 
+
+#wrapper { 
+    background-color: #e9cd9e; 
     color: #825030;
     width: 80%;
     margin: auto;
-    min-width:800px;
+    min-width: 800px;
     box-shadow: 0 0 10px #000;
-    border:1px solid #000;
+    border: 1px solid #000;
 } 
-#leftcolumn { float: left;
-        width: 140px;
-        a {text-decoration: none;}
-        padding-top: 5px;
-       /* background-color: #e6a534;
-        color: #6B3E2E; */
 
+/* Updated leftcolumn with better navigation */
+#leftcolumn { 
+    float: left;
+    width: 140px;
+    padding: 20px 10px;
+    background-color: #e6a534;
 } 
-#rightcolumn { margin-left: 155px;
-        background-color: #f8e8cc;
-        color: #693210;
-        padding-bottom: 5px;
 
-} 
-header{ background-color: #cfa459;
-color: #825030; 
-font-size: 150%; 
-font-family: "Brush Script MT", "Comic Sans MS", cursive;
-text-align: center;
-
-
+/* New flexbox navigation styling */
+#leftcolumn nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
-h2 { color: #825030; 
-font-family: arial, sans-serif;
-margin-top: 0;
+
+/* Updated navigation links */
+#leftcolumn nav a {
+    display: block;
+    text-decoration: none;
+    color: #482813;
+    padding: 8px 12px;
+    background-color: #cfa459;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.2;
+    transition: all 0.3s ease;
 }
-.content {padding: 10px 10px 10px 10px; 
 
+/* Hover effect for navigation */
+#leftcolumn nav a:hover {
+    background-color: #825030;
+    color: white;
+}
+
+#rightcolumn { 
+    margin-left: 180px; /* Increased to account for new sidebar width */
+    background-color: #f8e8cc;
+    color: #693210;
+    padding-bottom: 5px;
 } 
-.padding10px {padding: 10px 10px 10px 10px;}
-#floatleft { margin: 15px;
-        padding-right: 30px;
-        padding-bottom: 30px;
 
-        float: left;
+header { 
+    background-color: #cfa459;
+    color: #825030; 
+    font-size: 150%; 
+    font-family: "Brush Script MT", "Comic Sans MS", cursive;
+    text-align: center;
+}
+
+h2 { 
+    color: #825030; 
+    font-family: arial, sans-serif;
+    margin-top: 0;
+}
+
+.content {
+    padding: 10px 10px 10px 10px; 
+} 
+
+.padding10px {
+    padding: 10px 10px 10px 10px;
+}
+
+#floatleft { 
+    margin: 15px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    float: left;
 }
 
 footer {
     background-color: #cfa459;
     color: #4A2E1D;
-    font-size:70%;
+    font-size: 70%;
     text-align: center;
-    clear: right;
-    padding-TOP:30px;
+    clear: both; /* Changed from 'right' to 'both' for better float clearing */
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
 
-    padding-bottom:20px;
-}	
-nav a {	margin: 30px;
-/*display: block;*/
-} 
+/* Removed old nav a styling since we have new specific ones above */
+
 /* unvisited link */
 a:link {
-color: #482813;
+    color: #482813;
 }
 
 /* visited link */
 a:visited {
-color: #655349;
+    color: #655349;
 }
 
-/* mouse over link */
+/* mouse over link (only for non-nav links) */
 a:hover {
-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
 }
 
 /* selected link */
 a:active {
-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 } 
-ul{padding-right: 20px;}
-header h1 {margin: 0;
+
+ul {
+    padding-right: 20px;
 }
 
 header h1 {
@@ -106,11 +144,11 @@ header h1 {
     border-collapse: separate;
 }
 
-#contentTable th,td {
+#contentTable th, td {
     padding: 20px;
     text-align: center;
-
 }
+
 #contentTable tr:nth-child(odd) {
     background-color: #cfa459;
 }
@@ -121,16 +159,17 @@ header h1 {
     border: 2px;
     width: 80%;
     border-collapse: separate;
-
 }
 
-#musicTable th,td {
+#musicTable th, td {
     text-align: left;
     padding-left: 25px;
 }
+
 #musicTable tr:nth-child(odd) {
     background-color: #cfa459;
 }
+
 #formTable { 
     margin: auto;
     border-spacing: 0px;
@@ -139,16 +178,42 @@ header h1 {
     border-collapse: separate;
 }
 
-#formTable th,td {
+#formTable th, td {
     text-align: left;
     padding-left: 5px;
 }
 
-input{
+input {
     padding-left: 5px;
 }
 
-.price-input 
-{ 
-    display: none; margin-left: 10px; 
+.price-input { 
+    display: none; 
+    margin-left: 10px; 
 }
+
+.section {
+    margin-bottom: 30px;
+}
+.section h3 {
+    color: #825030;
+    border-bottom: 2px solid #cfa459;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+.course {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f8e8cc;
+    border-left: 4px solid #cfa459;
+}
+.course-title {
+    font-weight: bold;
+    color: #693210;
+    margin-bottom: 5px;
+}
+.course-desc {
+    font-size: 14px;
+    color: #555;
+}
+
