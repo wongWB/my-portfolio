@@ -288,3 +288,10 @@ input {
         margin-top: 10px;
     }
 }
+
+/* External link indicator */
+.external-link::after {
+    content: " ↗";
+    font-size: 10px;
+    opacity: 0.7;
+}
